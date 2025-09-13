@@ -1,0 +1,53 @@
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Dossier icloud
+*.icloud
+
+# Fichiers de thumbs
+._*
+
+# Dossier trash
+.Trashes
+
+# Metadata Spotlight
+.Spotlight-V100
+.fseventsd
+
+
+### Godot ###
+# Dossier cache des imports (Godot le recrée automatiquement)
+.import/
+
+# Données locales du projet (Godot 4)
+.godot/
+
+# Fichier de presets d’export (souvent spécifique à chaque machine)
+export_presets.cfg
+
+# Sauvegardes temporaires de scènes/scripts
+*.tmp
+*.translation
+
+# Crash logs
+godot*.log
+
+
+### VS Code ###
+.vscode/
+.history/
+*.code-workspace
+
+
+### JetBrains (Rider, CLion, PhpStorm, etc.) ###
+.idea/
+*.iml
+
+
+### Autres ###
+# Fichiers système génériques
+Thumbs.db
+ehthumbs.db
+Desktop.ini
