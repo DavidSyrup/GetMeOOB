@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8rild5m2oyiy"
-path="res://.godot/imported/character_right_frame_3.png-0098410b51f5242713b082d6982f3a12.ctex"
+uid="uid://jj3hqy7dcww"
+path="res://.godot/imported/tourelle_right.png-fc6f8cf6ff98214562aae4c6eed68680.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_right_frame_3.png"
-dest_files=["res://.godot/imported/character_right_frame_3.png-0098410b51f5242713b082d6982f3a12.ctex"]
+source_file="res://assets/sprites/tourelle_right.png"
+dest_files=["res://.godot/imported/tourelle_right.png-fc6f8cf6ff98214562aae4c6eed68680.ctex"]
 
 [params]
 

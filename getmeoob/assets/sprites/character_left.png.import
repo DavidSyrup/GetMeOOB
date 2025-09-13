@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs6m4a77wyyfx"
-path="res://.godot/imported/speed_pad_right.png-60c832dc1b7ccc2bc63783d05ccc7df1.ctex"
+uid="uid://cg3e8f16ty7cu"
+path="res://.godot/imported/character_left.png-0466bb38ecf73b26ae7389b3aa16fa4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/speed_pad_right.png"
-dest_files=["res://.godot/imported/speed_pad_right.png-60c832dc1b7ccc2bc63783d05ccc7df1.ctex"]
+source_file="res://assets/sprites/character_left.png"
+dest_files=["res://.godot/imported/character_left.png-0466bb38ecf73b26ae7389b3aa16fa4f.ctex"]
 
 [params]
 

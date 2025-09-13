@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jj3hqy7dcww"
-path="res://.godot/imported/tourelle_right.png-cce9ba74bf13a39bd322faf73614e3c0.ctex"
+uid="uid://di36mt0q7kfuh"
+path="res://.godot/imported/door_template_1_presence.png-f1853dca968d8637726802b531f65447.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tourelle_right.png"
-dest_files=["res://.godot/imported/tourelle_right.png-cce9ba74bf13a39bd322faf73614e3c0.ctex"]
+source_file="res://assets/sprites/door_template_1_presence.png"
+dest_files=["res://.godot/imported/door_template_1_presence.png-f1853dca968d8637726802b531f65447.ctex"]
 
 [params]
 

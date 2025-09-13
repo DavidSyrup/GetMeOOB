@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pd8o6isq4vre"
-path="res://.godot/imported/robot_left.png-36d4c667dad61136ee5e4ac79148bfb8.ctex"
+uid="uid://dt8p6c3x7c5rf"
+path="res://.godot/imported/lever_left.png-8e737dd3d47a5c763c0c61f120e8bef7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/robot_left.png"
-dest_files=["res://.godot/imported/robot_left.png-36d4c667dad61136ee5e4ac79148bfb8.ctex"]
+source_file="res://assets/sprites/lever_left.png"
+dest_files=["res://.godot/imported/lever_left.png-8e737dd3d47a5c763c0c61f120e8bef7.ctex"]
 
 [params]
 
