@@ -9,6 +9,15 @@ extends CharacterBody2D
 @export var landing_dampen: float = 0.6       # 0..1 : casse l’élan à l’atterrissage
 @export var stop_threshold: float = 10.0      # met vite la vitesse à 0
 
+# --- Début : paramètres de poussée (réglables dans l’inspector) ---
+@export var can_push_only_on_floor: bool = true
+@export var push_impulse: float = 160.0      # intensité des coups d’épaule
+@export var push_cooldown: float = 0.05      # toutes les X s on ré-applique l’impulsion
+@export var push_side_angle: float = 0.4     # |normal.y| < 0.4 ≈ contact latéral
+var _push_cd: float = 0.0
+# --- Fin : paramètres de poussée ---
+
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var last_movement: String = "left"
 var boost_time: float = 0.0
@@ -85,6 +94,42 @@ func _physics_process(delta: float) -> void:
 				velocity.x = 0.0
 
 	move_and_slide()
+	
+	# Gestion du cooldown d’impulsions
+	if _push_cd > 0.0:
+		_push_cd -= delta
+		
+	#Conditions pour pousser : input latéral + (au sol si demandé)
+	var dir := Input.get_axis("move_left", "move_right")
+	var pushing_allowed := (dir != 0.0)
+	if can_push_only_on_floor and not is_on_floor():
+		pushing_allowed = false
+		
+	if pushing_allowed and _push_cd <= 0.0:
+		var i := 0
+		var slide_count := get_slide_collision_count()
+		while i < slide_count:
+			var col := get_slide_collision(i)
+			var rb := col.get_collider()
+			#On pousse seulement les objets "pushable"
+			if rb is RigidBody2D and rb.is_in_group("pushable"):
+				#Contact latéral (pas le sol/plafond)
+				var side_contact = abs(col.get_normal().y) < push_side_angle
+				# Le pad doit être DEVANT le joueur (évite de le "tirer" à travers soi)
+				var delta_x = rb.global_position.x - global_position.x
+				var front_ok := false
+				if dir > 0.0 and delta_x > 0.0:
+					front_ok = true
+				elif dir < 0.0 and delta_x < 0.0:
+					front_ok = true
+				if side_contact and front_ok:
+					var impulse := Vector2(dir * push_impulse, 0.0)
+					rb.apply_central_impulse(impulse)
+					_push_cd = push_cooldown
+				# Optionnel : casser un peu ta vitesse pour éviter de "traverser"
+				# velocity.x = move_toward(velocity.x, velocity.x, 0.0)  # no-op ici, garde si besoin
+				break
+			i += 1
 
 	# Timers/états
 	if boost_time > 0.0:

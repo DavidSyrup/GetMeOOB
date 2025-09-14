@@ -24,4 +24,6 @@ one_way_collision_margin = 0.0
 
 [node name="BoostPad" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(-352, -5)
+mass = 1.0
 boost_power = 1500.0
+face_left = false

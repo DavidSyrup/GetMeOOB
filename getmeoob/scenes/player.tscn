@@ -86,7 +86,7 @@ animations = [{
 radius = 40.0
 height = 272.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_g2els")
 jump_velocity = -500.0
 ground_friction = 8000.0

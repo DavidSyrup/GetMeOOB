@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6m4a77wyyfx" path="res://assets/sprites/speed_pad_right.png" id="2_r7em4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aeare"]
+friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4r1tn"]
 size = Vector2(124, 59)
@@ -26,10 +27,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BoostPad" type="RigidBody2D"]
+[node name="BoostPad" type="RigidBody2D" groups=["pushable"]]
+collision_layer = 8
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_aeare")
+gravity_scale = 0.0
 lock_rotation = true
+linear_damp = 10.0
+angular_damp = 16.0
 script = ExtResource("1_k3ilj")
 face_left = true
 
@@ -40,7 +45,7 @@ shape = SubResource("RectangleShape2D_4r1tn")
 [node name="TopSensor" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopSensor"]
-position = Vector2(-0.5, -39.75)
+position = Vector2(-0.5, -34.75)
 shape = SubResource("RectangleShape2D_g7rac")
 
 [node name="Visual" type="Node2D" parent="."]
