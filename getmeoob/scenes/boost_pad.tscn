@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://boaiiix635khj"]
 
-[ext_resource type="Script" uid="uid://bdbk2c8lyp2yv" path="res://scripts/boost_pad.gd" id="1_k3ilj"]
+[ext_resource type="Script" uid="uid://2qrtpfc5osia" path="res://boost_pad.gd" id="1_k3ilj"]
 [ext_resource type="Texture2D" uid="uid://btf0d2i3jow5n" path="res://assets/sprites/speed_pad_sheet_right.png" id="2_k3ilj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aeare"]
@@ -10,7 +10,7 @@ friction = 0.0
 size = Vector2(124, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7rac"]
-size = Vector2(111, 7.5)
+size = Vector2(84, 7.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7em4"]
 atlas = ExtResource("2_k3ilj")
@@ -47,15 +47,18 @@ face_left = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)
+scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_4r1tn")
 
 [node name="TopSensor" type="Area2D" parent="."]
+scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopSensor"]
-position = Vector2(-0.5, -34.75)
+position = Vector2(0, -34.75)
 shape = SubResource("RectangleShape2D_g7rac")
 
 [node name="Visual" type="Node2D" parent="."]
+scale = Vector2(0.3, 0.3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual"]
 sprite_frames = SubResource("SpriteFrames_22kv3")
