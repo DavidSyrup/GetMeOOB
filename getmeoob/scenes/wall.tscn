@@ -10,6 +10,7 @@ size = Vector2(105, 302)
 script = ExtResource("1_2ktk7")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 scale = Vector2(1.314, 1)
