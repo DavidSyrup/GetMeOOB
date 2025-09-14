@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjcy1yjf73qyk"]
+
+[ext_resource type="Texture2D" uid="uid://bfpyxk826fuuj" path="res://assets/sprites/robot_right.png" id="1_br0rw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfm56"]
+atlas = ExtResource("1_br0rw")
+region = Rect2(0, 0, 127, 378)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhfw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfm56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Robot" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yhfw1")

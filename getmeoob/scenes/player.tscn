@@ -88,6 +88,10 @@ height = 272.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
+jump_velocity = -500.0
+ground_friction = 8000.0
+landing_dampen = 0.7
+stop_threshold = 20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -133)

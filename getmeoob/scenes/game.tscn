@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ttgb2dq0ld5g"]
+[gd_scene load_steps=4 format=3 uid="uid://ttgb2dq0ld5g"]
 
 [ext_resource type="PackedScene" uid="uid://c67amgb2u5vxu" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://boaiiix635khj" path="res://scenes/boost_pad.tscn" id="2_yqjtg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -20,3 +21,7 @@ position = Vector2(-3, -1)
 position = Vector2(92, 38)
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 one_way_collision_margin = 0.0
+
+[node name="BoostPad" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(-352, -5)
+boost_power = 1500.0
