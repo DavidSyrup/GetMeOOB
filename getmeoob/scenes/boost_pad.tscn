@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://boaiiix635khj"]
 
-[ext_resource type="Script" uid="uid://bdbk2c8lyp2yv" path="res://boost_pad.gd" id="1_k3ilj"]
+[ext_resource type="Script" uid="uid://bdbk2c8lyp2yv" path="res://scripts/boost_pad.gd" id="1_k3ilj"]
 [ext_resource type="Texture2D" uid="uid://btf0d2i3jow5n" path="res://assets/sprites/speed_pad_sheet_right.png" id="2_k3ilj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aeare"]
