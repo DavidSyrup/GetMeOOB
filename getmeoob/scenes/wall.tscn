@@ -1,23 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc05uf04kq62u"]
+[gd_scene load_steps=5 format=3 uid="uid://dc05uf04kq62u"]
 
 [ext_resource type="Script" uid="uid://cbgyme0n8xhj8" path="res://scripts/wall.gd" id="1_2ktk7"]
 [ext_resource type="Texture2D" uid="uid://brtt63mmqif67" path="res://assets/Background/wall.png" id="1_ff73c"]
+[ext_resource type="Script" uid="uid://vtgwvswyhbm2" path="res://scenes/area_2d.gd" id="2_e00m8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ff73c"]
-size = Vector2(105, 302)
+size = Vector2(106.25, 302)
 
 [node name="wall" type="Node2D"]
 script = ExtResource("1_2ktk7")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_mask = 3
+script = ExtResource("2_e00m8")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(19.75, -2)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("RectangleShape2D_ff73c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 scale = Vector2(1.314, 1)
 texture = ExtResource("1_ff73c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.125, -3)
 shape = SubResource("RectangleShape2D_ff73c")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
