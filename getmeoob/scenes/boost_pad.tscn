@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://boaiiix635khj"]
+[gd_scene load_steps=9 format=3 uid="uid://boaiiix635khj"]
 
 [ext_resource type="Script" uid="uid://bdbk2c8lyp2yv" path="res://boost_pad.gd" id="1_k3ilj"]
-[ext_resource type="Texture2D" uid="uid://cs6m4a77wyyfx" path="res://assets/sprites/speed_pad_right.png" id="2_r7em4"]
+[ext_resource type="Texture2D" uid="uid://btf0d2i3jow5n" path="res://assets/sprites/speed_pad_sheet_right.png" id="2_k3ilj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aeare"]
 friction = 0.0
@@ -12,15 +12,22 @@ size = Vector2(124, 59)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7rac"]
 size = Vector2(111, 7.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sw4gm"]
-atlas = ExtResource("2_r7em4")
-region = Rect2(0, 0, 152, 87)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7em4"]
+atlas = ExtResource("2_k3ilj")
+region = Rect2(0, 0, 150, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeare"]
+atlas = ExtResource("2_k3ilj")
+region = Rect2(150, 0, 150, 78)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_22kv3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sw4gm")
+"texture": SubResource("AtlasTexture_r7em4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeare")
 }],
 "loop": true,
 "name": &"default",
@@ -52,3 +59,4 @@ shape = SubResource("RectangleShape2D_g7rac")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual"]
 sprite_frames = SubResource("SpriteFrames_22kv3")
+autoplay = "default"

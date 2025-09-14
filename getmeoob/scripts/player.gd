@@ -44,7 +44,9 @@ func _physics_process(delta: float) -> void:
 	if just_landed:
 		velocity.x *= landing_dampen
 
-	# Saut
+	# Input horizontal
+	var direction := Input.get_axis("move_left", "move_right")
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 
@@ -52,22 +54,29 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("move_down") and not is_on_floor():
 		velocity.y = -jump_velocity  # jump_velocity est négatif → -(-400)=+400 descend
 
-	# Input horizontal
-	var direction := Input.get_axis("move_left", "move_right")
-
 	# -------- Animations (inchangées) --------
-	if direction > 0.0:
-		animated_sprite.play("Run_Right")
-		last_movement = "right"
-	elif direction < 0.0:
-		animated_sprite.play("Run_Left")
-		last_movement = "left"
-	else:
-		if last_movement == "right":
-			animated_sprite.play("Idle_Right")
+	if is_on_floor():
+		if direction > 0.0:
+			animated_sprite.play("Run_Right")
+			last_movement = "right"
+		elif direction < 0.0:
+			animated_sprite.play("Run_Left")
+			last_movement = "left"
 		else:
-			animated_sprite.play("Idle_Left")
+			animated_sprite.play("Idle")
+	else:
+		if direction > 0.0:
+			animated_sprite.play("Jump_Right")
+		elif direction < 0.0:
+			animated_sprite.play("Jump_Left")
+		elif direction == 0 && last_movement == "left":
+			animated_sprite.play("Jump_Left")
+		elif direction == 0 && last_movement == "right":
+			animated_sprite.play("Jump_Right")
+		
 	# -----------------------------------------
+	
+		# Saut
 
 	# Accélération / friction avec protection du boost
 	var accel: float
